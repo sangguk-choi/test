@@ -1,0 +1,4 @@
+front
+https://chat-egd.pages.dev
+backend
+https://sgxbfq7av4t5s4dxqphonooqda0zpfvk.lambda-url.ap-northeast-2.on.aws/fortuneTell

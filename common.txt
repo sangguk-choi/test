@@ -1,0 +1,6 @@
+일반 인증키
+(Encoding)	
+RY86xHRwOGsZ8K3FWKxwqE6zjJxf7cW0%2FMILj2JgqZFmG2AB9K45mP1RiyePy23jhtmXL6us4GtOXUFb0RIIzg%3D%3D
+일반 인증키
+(Decoding)	
+RY86xHRwOGsZ8K3FWKxwqE6zjJxf7cW0/MILj2JgqZFmG2AB9K45mP1RiyePy23jhtmXL6us4GtOXUFb0RIIzg==

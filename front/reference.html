@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<b<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>API 요청 예시</title>
+    </head>
+
+    <body>
+        <h1>API 요청 예시</h1>
+
+        <div id="result"></div>
+
+        <script>
+            const apiKey = 'RY86xHRwOGsZ8K3FWKxwqE6zjJxf7cW0/MILj2JgqZFmG2AB9K45mP1RiyePy23jhtmXL6us4GtOXUFb0RIIzg==';
+
+            const baseUrl = 'https://apis.data.go.kr/B551011/ForFriTourService';
+            const endpoint = '/detailIntro';
+
+            const queryParams = new URLSearchParams({
+                serviceKey: apiKey,
+                MobileOS: 'ETC',
+                MobileApp: 'APP',
+                contentId: '2523587',
+                contentTypeId: '1145',
+                numOfRows: '10',
+                pageNo: '1',
+                _type: 'json'
+            });
+
+            const apiUrl = `${baseUrl}${endpoint}?${queryParams.toString()}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // 응답 데이터 처리
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.textContent = JSON.stringify(data);
+                })
+                .catch(error => {
+                    // 오류 처리
+                    console.error('API 요청 중 오류가 발생했습니다:', error);
+                });
+        </script>
+    </body>
+
+    </html>
+
+
+    <!-- contentid: 콘텐츠 ID
+contenttypeid: 콘텐츠 유형 ID
+halalCertYn: 할랄 인증 여부 (0: 미인증, 1: 인증)
+musChef: 무슬림 요리사 여부 (0: 아니오, 1: 예)
+alcoholFree: 알코올 제공 여부 (0: 아니오, 1: 예)
+halalMenu: 할랄 메뉴 제공 여부 (0: 아니오, 1: 예)
+rsvt: 예약 가능 여부 (0: 불가능, 1: 가능)
+forkFree: 포크 제공 여부 (0: 아니오, 1: 예)
+bsshDiv: 사업장 구분 (일반 음식점, 공중음식점 등)
+relevIndex: 관련 인덱스
+rsvtYn: 항상 예약 가능 여부
+hmpgUrl: 홈페이지 URL
+mngr: 담당자
+aceptncNmprInfo: 수용 인원 정보
+menu: 음식 메뉴
+prc: 가격 정보
+foodTelno: 음식점 전화번호
+foodOprTime: 음식점 운영 시간
+parkngFcltyInfo: 주차 시설 정보
+prayerPlacePrvdYn: 기도 공간 제공 여부
+musCvntlInfo: 무슬림 관련 정보
+nrbyPrmryTats: 인근 주요 관광지 -->

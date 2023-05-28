@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>살람코리아</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+    rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+
+  <link href="css/global.css" rel="stylesheet" />
+  <style>
+    table {
+      background-color: #ffffffb5;
+      font-size: 16px !important;
+    }
+
+    thead {
+      border-bottom: 1px solid #126e74;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="index.html">살람코리아 </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto py-4 py-lg-0">
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="halal.html">할랄 지도</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="pray.html">기도실</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="detail.html">상세조회</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header-->
+  <header class="masthead" style="background-image: url('assets/img/pray3.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Post Content-->
+  <article class="mb-4">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="kakao-ad">
+            <ins class="kakao_ad_area" style="display: none" data-ad-unit="DAN-6YVXr7AlgkJKxZNf" data-ad-width="728"
+              data-ad-height="90"></ins>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+          </div>
+          <h2 class="section-heading">할랄 식당 및 기도 정보</h2>
+          <div class="container-fluid" style="margin-top:20px;
+          ">
+            <form>
+              <div class="row g-3">
+                <label for="inputEmail3" class="col-sm-1 col-form-label">지역명</label>
+                <div class="col-sm">
+                  <input type="text" class="form-control" id="keywordInput" placeholder="도시" aria-label="City">
+                </div>
+                <label for="inputEmail3" class="col-sm-1 col-form-label">종류</label>
+                <div class="col-sm">
+                  <select class="form-select" id="contentTypeIdSelect">
+                    <option value="">All</option>
+                    <option value="1145">음식</option>
+                    <option value="1146">기도실</option>
+                  </select>
+                </div>
+                <div class="col-sm">
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Search</button>
+                </div>
+              </div>
+
+              <select id="areaCodeSelect" style="display: none;">
+                <option value="">All</option>
+                <option value="1">서울특별시</option>
+                <option value="2">인천광역시</option>
+                <option value="3">대전광역시</option>
+                <option value="4">대구광역시</option>
+                <option value="5">광주광역시</option>
+                <option value="6">부산광역시</option>
+                <option value="7">울산광역시</option>
+                <option value="8">세종특별자치시</option>
+                <option value="31">경기도</option>
+                <option value="32">강원도</option>
+                <option value="33">충청북도</option>
+                <option value="34">충청남도</option>
+                <option value="35">전라북도</option>
+                <option value="36">전라남도</option>
+                <option value="37">경상북도</option>
+                <option value="38">경상남도</option>
+                <option value="39">제주특별자치도</option>
+              </select>
+            </form>
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">이름</th>
+                  <th scope="col">주소</th>
+                  <th scope="col">사진</th>
+                </tr>
+              <tbody id="responseContainer"></tbody>
+              </thead>
+            </table>
+            <div id="paginationContainer" style="
+              display: flex;
+              justify-content: center;
+          "></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- Footer-->
+  <footer class="border-top">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>연락정보</h5>
+              <p>Phone: 010-6471-4871</p>
+              <p>Email: sun2547@naver.com</p>
+            </div>
+            <div class="col-md-6">
+              <h5>Social Media</h5>
+              <p>
+                <a href="#"><i class="fab fa-kakao"></i></a>
+              </p>
+            </div>
+          </div>
+          <div class="small text-center text-muted fst-italic">
+            Copyright &copy; 살람코리아 2023
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const url =
+      "https://api.odcloud.kr/api/15099380/v1/uddi:95b9a718-72a4-4654-a1da-cfc84cdde264";
+    const perPage = 10;
+    let page = 1;
+    let searchAddress = "";
+    let searchRegion = "";
+
+    const searchAddressInput = document.getElementById("search-address");
+    const searchRegionInput = document.getElementById("search-region");
+    const dataContainer = document.getElementById("data-container");
+    const pagination = document.getElementById("pagination");
+
+    searchAddressInput.addEventListener("input", () => {
+      searchAddress = searchAddressInput.value.trim();
+      resetPagination();
+      fetchData();
+    });
+
+    searchRegionInput.addEventListener("input", () => {
+      searchRegion = searchRegionInput.value.trim();
+      resetPagination();
+      fetchData();
+    });
+
+    function fetchData() {
+      const updatedUrl = `${url}?page=${page}&perPage=${perPage}&serviceKey=RY86xHRwOGsZ8K3FWKxwqE6zjJxf7cW0%2FMILj2JgqZFmG2AB9K45mP1RiyePy23jhtmXL6us4GtOXUFb0RIIzg%3D%3D`;
+
+      fetch(updatedUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          const results = data.data;
+
+          renderData(results);
+
+          const totalCount = data.totalCount;
+          const pageCount = Math.ceil(totalCount / perPage);
+          renderPagination(pageCount);
+        })
+        .catch((error) => {
+          console.log("Error:", error);
+        });
+    }
+
+    function renderData(results) {
+      dataContainer.innerHTML = ""; // 이전 데이터 삭제
+
+      const table = document.createElement("table");
+      table.classList.add("table");
+
+      const thead = document.createElement("thead");
+      const tbody = document.createElement("tbody");
+
+      const headerRow = document.createElement("tr");
+      headerRow.innerHTML = `
+        <th>주소</th>
+        <th>지역</th>
+      `;
+      thead.appendChild(headerRow);
+
+      results.forEach((result) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${result.주소}</td>
+          <td>${result.지역}</td>
+        `;
+        tbody.appendChild(row);
+      });
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+
+      dataContainer.appendChild(table);
+    }
+
+    function renderPagination(pageCount) {
+      pagination.innerHTML = ""; // 이전 페이지 링크 삭제
+
+      const prevPageItem = createPaginationItem("Previous", page > 1, () => {
+        if (page > 1) {
+          page--;
+          fetchData();
+        }
+      });
+
+      pagination.appendChild(prevPageItem);
+
+      for (let i = 1; i <= pageCount; i++) {
+        const pageItem = createPaginationItem(i, page !== i, () => {
+          if (page !== i) {
+            page = i;
+            fetchData();
+          }
+        });
+
+        pagination.appendChild(pageItem);
+      }
+
+      const nextPageItem = createPaginationItem(
+        "Next",
+        page < pageCount,
+        () => {
+          if (page < pageCount) {
+            page++;
+            fetchData();
+          }
+        }
+      );
+
+      pagination.appendChild(nextPageItem);
+    }
+
+    function createPaginationItem(label, enabled, onClick) {
+      const li = document.createElement("li");
+      li.classList.add("page-item");
+
+      const link = document.createElement("a");
+      link.classList.add("page-link");
+      link.innerHTML = label;
+      link.href = "#";
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (enabled) {
+          onClick();
+        }
+      });
+
+      li.appendChild(link);
+
+      if (!enabled) {
+        li.classList.add("disabled");
+      }
+
+      return li;
+    }
+
+    function resetPagination() {
+      page = 1;
+    }
+
+    fetchData();
+  </script>
+  <script>
+    $(document).ready(function () {
+      var url =
+        "https://muslimsalat.com/seoul/daily.json?key=34fdebb22c296ecb18714293cc004922";
+      $.ajax({
+        url: url,
+        dataType: "jsonp",
+        success: function (times) {
+          $(".prayerTimesExample").append(
+            "<tr>" +
+            "<td>" +
+            times.title +
+            "</td>" +
+            "<td>" +
+            times.items[0].fajr +
+            "</td>" +
+            "<td>" +
+            times.items[0].dhuhr +
+            "</td>" +
+            "<td>" +
+            times.items[0].asr +
+            "</td>" +
+            "<td>" +
+            times.items[0].maghrib +
+            "</td>" +
+            "<td>" +
+            times.items[0].isha +
+            "</td>" +
+            "<td>by MuslimSalat.com</td>" +
+            "</tr>"
+          );
+        },
+        error: function () {
+          $(".prayerTimesExample").append(
+            "<tr><td colspan='7'>Error occurred while fetching prayer times.</td></tr>"
+          );
+        },
+      });
+    });
+  </script>
+  <script>
+    window.addEventListener('load', function () {
+      var keyword = '서울';
+      var page = 1;
+      var contentTypeId = 1145;
+      var areaCode = 1;
+      performSearch(keyword, page, contentTypeId, areaCode);
+    });
+
+    var form = document.querySelector('form');
+    var keywordInput = document.getElementById('keywordInput');
+    var contentTypeIdSelect = document.getElementById('contentTypeIdSelect');
+    var areaCodeSelect = document.getElementById('areaCodeSelect');
+    var responseContainer = document.getElementById('responseContainer');
+    var paginationContainer = document.getElementById('paginationContainer');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var keyword = keywordInput.value.trim();
+      if (keyword === '') {
+        return;
+      }
+
+      var currentPage = 1;
+      var contentTypeId = contentTypeIdSelect.value;
+      var areaCode = areaCodeSelect.value;
+      performSearch(keyword, currentPage, contentTypeId, areaCode);
+    });
+
+    function performSearch(keyword, page, contentTypeId, areaCode) {
+      var xhr = new XMLHttpRequest();
+      var apiKey =
+        'RY86xHRwOGsZ8K3FWKxwqE6zjJxf7cW0/MILj2JgqZFmG2AB9K45mP1RiyePy23jhtmXL6us4GtOXUFb0RIIzg==';
+      var url = 'https://apis.data.go.kr/B551011/ForFriTourService/searchKeyword';
+      var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + apiKey;
+      queryParams +=
+        '&' + encodeURIComponent('MobileOS') + '=' + encodeURIComponent('etc');
+      queryParams +=
+        '&' + encodeURIComponent('MobileApp') + '=' + encodeURIComponent('etc');
+      queryParams +=
+        '&' + encodeURIComponent('keyword') + '=' + encodeURIComponent(keyword);
+      queryParams +=
+        '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('json');
+      queryParams +=
+        '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10');
+      queryParams +=
+        '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent(page);
+      queryParams +=
+        '&' +
+        encodeURIComponent('contentTypeId') +
+        '=' +
+        encodeURIComponent(contentTypeId);
+      queryParams +=
+        '&' + encodeURIComponent('areaCode') + '=' + encodeURIComponent(areaCode);
+
+      xhr.open('GET', url + queryParams, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var data = JSON.parse(xhr.responseText);
+          var items = data.response.body.items.item;
+
+          var html = '';
+          for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var title = item.title;
+            var contentid = item.contentid;
+            var contenttypeid = item.contenttypeid; //관광타입(1145:음식 , 1146:기도실)
+            var addr1 = item.addr1;
+            var cat1 = item.cat1;
+            var areacode = parseInt(item.areacode);
+
+            var firstimage = item.firstimage;
+            var firstimage2 = item.firstimage2;
+            var areaname = ''; // 번호에 맞는 한글 지역명을 저장할 변수
+
+            switch (areacode) {
+              case 1:
+                areaname = '서울특별시';
+                break;
+              case 2:
+                areaname = '인천광역시';
+                break;
+              case 3:
+                areaname = '대전광역시';
+                break;
+              case 4:
+                areaname = '대구광역시';
+                break;
+              case 5:
+                areaname = '광주광역시';
+                break;
+              case 6:
+                areaname = '부산광역시';
+                break;
+              case 7:
+                areaname = '울산광역시';
+                break;
+              case 8:
+                areaname = '세종특별자치시';
+                break;
+              case 31:
+                areaname = '경기도';
+                break;
+              case 32:
+                areaname = '강원도';
+                break;
+              case 33:
+                areaname = '충청북도';
+                break;
+              case 34:
+                areaname = '충청남도';
+                break;
+              case 35:
+                areaname = '전라북도';
+                break;
+              case 36:
+                areaname = '전라남도';
+                break;
+              case 37:
+                areaname = '경상북도';
+                break;
+              case 38:
+                areaname = '경상남도';
+                break;
+              case 39:
+                areaname = '제주특별자치도';
+                break;
+              default:
+                areaname = '알 수 없는 지역';
+                break;
+            }
+
+            html += '<tr>';
+            html += '<td>' + title + '</td>';
+            html += '<td>' + addr1 + '</td>';
+            html +=
+              '<td><img style="width: 200px;height: 200px;" src="' +
+              firstimage +
+              '"></td>';
+            html += '</tr>';
+          }
+          responseContainer.innerHTML = html;
+
+          var totalCount = parseInt(data.response.body.totalCount);
+          var totalPages = Math.ceil(totalCount / 10); // 한 페이지에 10개씩 표시하도록 가정
+          renderPagination(totalPages, page, keyword, contentTypeId, areaCode);
+        }
+      };
+      xhr.send();
+    }
+
+    // 페이지 로드시 performSearch 함수 호출
+
+    function renderPagination(
+      totalPages,
+      currentPage,
+      keyword,
+      contentTypeId,
+      areaCode,
+    ) {
+      var html = '<nav aria-label="Page navigation example">';
+      html += '<ul class="pagination">';
+      html += '<li class="page-item">';
+      html += '<a class="page-link" href="#" aria-label="Previous">';
+      html += '<span aria-hidden="true">&laquo;</span>';
+      html += '</a>';
+      html += '</li>';
+
+      for (var i = 1; i <= totalPages; i++) {
+        if (i === currentPage) {
+          html +=
+            '<li class="page-item active"><span class="page-link">' +
+            i +
+            '</span></li>';
+        } else {
+          html +=
+            '<li class="page-item"><a class="page-link" href="#" data-page="' +
+            i +
+            '">' +
+            i +
+            '</a></li>';
+        }
+      }
+
+      html += '<li class="page-item">';
+      html += '<a class="page-link" href="#" aria-label="Next">';
+      html += '<span aria-hidden="true">&raquo;</span>';
+      html += '</a>';
+      html += '</li>';
+      html += '</ul>';
+      html += '</nav>';
+
+      // 생성된 HTML을 해당 위치에 추가 또는 대체하면 됩니다.
+      // 예를 들어, id가 "paginationContainer"인 요소에 추가한다고 가정하면:
+      document.getElementById('paginationContainer').innerHTML = html;
+
+      // 페이지 링크 클릭 이벤트 핸들러 등록
+      var pageLinks = paginationContainer.querySelectorAll('a');
+      pageLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          var selectedPage = parseInt(link.getAttribute('data-page'));
+          performSearch(keyword, selectedPage, contentTypeId, areaCode);
+        });
+      });
+    }
+
+  </script>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
